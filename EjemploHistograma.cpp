@@ -8,7 +8,7 @@ using namespace std; //para no usar el prefijo std antes de cin y cout
 int main()
 { 
     // Vamos a usar una constante para definir la cantidad máxima de productos
-    const int maximo_productos = 5;
+    const int maximo_productos = 6;
     // Y otra para la altura del histograma (que es la cantidad máxima de pares vendidos por producto)
     const int maximo_piezas = 10;
 
@@ -17,7 +17,7 @@ int main()
     char histograma[maximo_piezas][maximo_productos];    // Usaremos el arreglo para dibujar el histograma, asumimos que no se venden más de 10 piezas de cada producto
     
     // Este arreglo se debe actualizar de acuerdo a la cantidad máxima de productos para que funcione bien el programa
-    string descripciones[maximo_productos] = { "Zapato dama","Zapato caballero", "Tenis dama", "Tenis caballero","Bota dama"};
+    string descripciones[maximo_productos] = { "Zapato dama","Zapato caballero", "Tenis dama", "Tenis caballero","Bota dama","Bota caballero"};
     
     // Hay que pedir la cantidad de piezas vendidas por producto
     for (int indice=0; indice<maximo_productos;indice=indice+1)
@@ -47,6 +47,10 @@ int main()
     //Ahora hay que imprimirlo
     for (int renglon = maximo_piezas-1; renglon >-1; renglon = renglon-1)
     {
+        if (renglon+1 < 10)
+        {
+            cout << "0";
+        }
         cout << renglon+1<< " ";
         for (int columna = 0; columna<maximo_productos; columna = columna+1)
         {
